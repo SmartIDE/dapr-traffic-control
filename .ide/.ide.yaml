@@ -1,0 +1,43 @@
+version: smartide/v0.3
+orchestrator:
+  type: docker-compose
+  version: 3
+workspace:
+  dev-container:
+    service-name: smartide-template-dotnet-v2-sysbox
+    ports:
+      tools-webide-vscode: 6800
+      tools-ssh: 6822
+      apps-application: 3001
+      email-system: 6900
+      visual-simulation: 6901
+      message-queue: 6902
+    ide-type: vscode
+    volumes: 
+        git-config: true
+        ssh-key: true
+    command:
+    # - code --install-extension muhammad-sammy.csharp
+    #  - code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
+    #  - dotnet new console
+  services:
+    smartide-template-dotnet-v2-sysbox:
+      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-sysbox
+      restart: always
+      environment:
+        ROOT_PASSWORD: 123qwe
+        LOCAL_USER_PASSWORD: 123qwe
+      ports:
+        - 6822:22
+        - 6800:3000
+        - 3001:3001
+        - 6900:4000
+        - 6901:5000
+        - 6902:9001
+      volumes:
+        - .:/home/project
+      networks:
+        - smartide-network  
+  networks:
+    smartide-network:
+      external: true      
