@@ -4,7 +4,7 @@ orchestrator:
   version: 3
 workspace:
   dev-container:
-    service-name: smartide-template-dotnet-v2-sysbox
+    service-name: smartide-template-dotnet-v2-vscode-sysbox
     ports:
       tools-webide-vscode: 6800
       tools-ssh: 6822
@@ -21,8 +21,8 @@ workspace:
     #  - code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
     #  - dotnet new console
   services:
-    smartide-template-dotnet-v2-sysbox:
-      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-sysbox
+    smartide-template-dotnet-v2-vscode-sysbox:
+      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vscode-sysbox
       restart: always
       environment:
         ROOT_PASSWORD: 123qwe
