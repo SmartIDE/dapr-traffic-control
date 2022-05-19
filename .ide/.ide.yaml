@@ -29,6 +29,10 @@ workspace:
       ports:
         - 6822:22
         - 6800:3000
+        - 3001:3001
+        - 4000:4000
+        - 6000:5000
+        - 9001:9001
       volumes:
         - .:/home/project
         - /var/run/docker.sock:/var/run/docker.sock 
