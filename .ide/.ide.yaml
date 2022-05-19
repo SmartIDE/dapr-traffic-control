@@ -35,7 +35,6 @@ workspace:
         - 9001:9001
       volumes:
         - .:/home/project
-        - /var/run/docker.sock:/var/run/docker.sock 
       networks:
         - smartide-network  
   networks:
