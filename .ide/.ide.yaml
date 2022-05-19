@@ -23,8 +23,6 @@ workspace:
   services:
     smartide-template-dotnet-v2-vscode-sysbox:
       image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vscode-sysbox
-      runtime: sysbox-runc
-      hostname: syscont
       restart: always
       environment:
         ROOT_PASSWORD: 123qwe
@@ -38,6 +36,7 @@ workspace:
         - 9001:9001
       volumes:
         - .:/home/project
+        - /var/run/docker.sock:/var/run/docker.sock 
       networks:
         - smartide-network  
   networks:
