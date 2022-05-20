@@ -24,8 +24,8 @@ workspace:
       runtime: sysbox-runc
       hostname: syscont
       environment:
-        ROOT_PASSWORD: 123qwe
-        LOCAL_USER_PASSWORD: 123qwe
+        ROOT_PASSWORD: smartide123.@IDE
+        LOCAL_USER_PASSWORD: smartide123.@IDE
       ports:
         - 6822:22
         - 6800:3000
