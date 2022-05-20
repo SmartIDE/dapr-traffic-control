@@ -9,14 +9,14 @@ workspace:
       tools-webide-vscode: 6800
       tools-ssh: 6822
       apps-application: 3001
+      apps-emailClient: 4000
+      apps-virtualSimulator: 5000
+      apps-messageQueueService: 9001
     ide-type: vscode
     volumes: 
         git-config: true
         ssh-key: true
     command:
-    # - code --install-extension muhammad-sammy.csharp
-    #  - code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
-    #  - dotnet new console
   services:
     smartide-template-dotnet-v2-vscode-sysbox:
       image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vscode-sysbox
