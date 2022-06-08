@@ -22,7 +22,7 @@ workspace:
       image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vscode-sysbox
       restart: always
       runtime: sysbox-runc
-      hostname: syscont
+      hostname: dev-conatiner
       environment:
         ROOT_PASSWORD: smartide123.@IDE
         LOCAL_USER_PASSWORD: smartide123.@IDE
