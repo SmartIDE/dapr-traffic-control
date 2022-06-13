@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: vehicleregistrationservice
-        image: dapr-trafficcontrol/vehicleregistrationservice:1.0
+        image: smartide/dapr-trafficcontrol-vehicleregistrationservice:1.0
         ports:
         - containerPort: 6002
 

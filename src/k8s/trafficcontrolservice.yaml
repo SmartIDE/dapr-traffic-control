@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: trafficcontrolservice
-        image: dapr-trafficcontrol/trafficcontrolservice:1.0
+        image: smartide/dapr-trafficcontrol-trafficcontrolservice:1.0
         ports:
         - containerPort: 6000

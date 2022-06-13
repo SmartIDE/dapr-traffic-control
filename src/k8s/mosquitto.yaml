@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: mosquitto
-          image: dapr-trafficcontrol/mosquitto:1.0
+          image: smartide/dapr-trafficcontrol-mosquitto:1.0
           imagePullPolicy: Never
           ports:
           - containerPort: 1883

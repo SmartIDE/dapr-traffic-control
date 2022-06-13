@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simulation
-        image: dapr-trafficcontrol/simulation:1.0
+        image: smartide/dapr-trafficcontrol-simulation:1.0
         env:
           - name: MQTT_HOST
             value: mosquitto.dapr-trafficcontrol.svc.cluster.local
