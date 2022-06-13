@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: smartide-dev-container
+  annotations:
+    io.kubernetes.cri-o.userns-mode: "auto:size=65536"
+spec:
+  runtimeClassName: sysbox-runc
+  containers:
+  - name: smartide-dev-container
+    image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vmlc
+    command: ["/sbin/init"]
+  restartPolicy: Never

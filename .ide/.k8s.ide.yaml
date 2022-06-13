@@ -1,0 +1,20 @@
+version: smartide/v0.3
+orchestrator:
+  type: docker-compose
+  version: 3
+workspace:
+  dev-container:
+    service-name: smartide-dotnet-v2-vscode-vmlc
+    ports:
+      tools-webide-vscode: 6800
+      tools-ssh: 6822
+      apps-emailClient: 4000
+      apps-virtualSimulator: 5000
+      apps-messageQueueService: 9001
+    ide-type: vscode
+    volumes: 
+        git-config: true
+        ssh-key: true
+    command:
+
+  kube-deploy-files: "*-deployment.yaml"
