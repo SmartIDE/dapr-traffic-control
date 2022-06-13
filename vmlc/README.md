@@ -42,5 +42,10 @@ kubectl port-forward smartide-dev-container 4000:4000
 启动k8s集群
 
 ```shell
+## 单节点
 kind create cluster --image registry.cn-hangzhou.aliyuncs.com/smartide/nestybox-kindestnode:v1.20.7
+## 双节点
+kind create cluster \
+    --config multi-node.yaml \
+    --image registry.cn-hangzhou.aliyuncs.com/smartide/nestybox-kindestnode:v1.20.7
 ```
