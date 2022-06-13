@@ -21,7 +21,7 @@ spec:
       containers:
         - name: mosquitto
           image: smartide/dapr-trafficcontrol-mosquitto:1.0
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 1883
       restartPolicy: Always
