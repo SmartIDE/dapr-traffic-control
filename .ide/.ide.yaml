@@ -18,7 +18,7 @@ workspace:
     command:
   services:
     smartide-template-dotnet-v2-vscode-dapr:
-      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vmlc
+      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vscode-vmlc
       restart: always
       runtime: sysbox-runc
       hostname: dev-conatiner
