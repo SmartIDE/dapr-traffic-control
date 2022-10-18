@@ -1,10 +1,11 @@
 version: smartide/v0.3
 orchestrator:
-  type: docker-compose
+  type: allinone
   version: 3
 workspace:
   dev-container:
-    service-name: smartide-template-dotnet-v2-vscode-dapr
+    service-name: smartide-vmlc-vscode-dotnet-dev
+
     ports:
       tools-webide-vscode: 6800
       tools-ssh: 6822
@@ -12,29 +13,15 @@ workspace:
       apps-virtualSimulator: 5000
       apps-messageQueueService: 9001
     ide-type: vscode
+
     volumes: 
-        git-config: true
-        ssh-key: true
+      git-config: true
+      ssh-key: true
     command:
-  services:
-    smartide-template-dotnet-v2-vscode-dapr:
-      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-dotnet-v2-vscode-vmlc
-      restart: always
-      runtime: sysbox-runc
-      hostname: dev-conatiner
-      environment:
-        ROOT_PASSWORD: root123
-        LOCAL_USER_PASSWORD: root123
-      ports:
-        - 6822:22
-        - 6800:3000
-        - 4000:4000
-        - 5000:5000
-        - 9001:9001
-      volumes:
-        - .:/home/project
-      networks:
-        - smartide-network  
-  networks:
-    smartide-network:
-      external: true      
+      - code --install-extension muhammad-sammy.csharp
+      # - code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
+      # - dotnet new console
+
+
+  kube-deploy-files: "vscode-vmlc-k8s-deployment.yaml" 
+  docker-compose-file: "vscode-vmlc-docker-compose.yaml"
